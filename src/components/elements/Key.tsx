@@ -4,7 +4,7 @@ import capitalize from "@/utils/capitalize";
 // types
 import { Key } from "@/types";
 
-//
+//----------------------------------------------
 
 type Props = {
 	className?: string;
@@ -22,7 +22,7 @@ const keyStyles = {
 	wide: "flex-1",
 };
 
-//
+//----------------------------------------------
 const Key = ({ className, keyData, active }: Props) => {
 	const keyStyle = `${keyStyles.key} ${
 		keyData.value.length > 1 ? keyStyles.other : keyStyles.main
@@ -41,4 +41,4 @@ const Key = ({ className, keyData, active }: Props) => {
 	);
 };
 
-export default Key;
+export default React.memo(Key);

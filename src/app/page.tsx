@@ -1,9 +1,21 @@
-import Keyboard from "@/components/Keyboard";
+import React from "react";
+// pages
+import Home from "./Home";
 
-export default function Home() {
+//----------------------------------------------
+export default function APP() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<Keyboard />
+		<main className="">
+			<Home />
 		</main>
 	);
 }
+
+//----------------------------------------------
+
+/**
+ * LOGIN
+ * LANDING / HOME
+ * HISTORY
+ * TEST
+ */

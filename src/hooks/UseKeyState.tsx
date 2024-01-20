@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
 
-//
+//----------------------------------------------
 const UseKeyState = () => {
 	const [pressedKey, setPressedKey] = useState<string | null>(null);
 

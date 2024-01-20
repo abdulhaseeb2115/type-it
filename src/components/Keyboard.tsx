@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback } from "react";
 // components
 import Key from "./elements/Key";
 // config
@@ -8,23 +8,32 @@ import { ARROW_KEY, MAIN_KEYS, OTHER_KEYS } from "@/config/keyboardKeys";
 // hooks
 import UseKeyState from "@/hooks/UseKeyState";
 
-//
+//----------------------------------------------
 
 type Props = {
 	className?: string;
+	forTest?: boolean;
+	activeKey?: string | null;
 };
 
 const keyboardStyles = {
-	container: "",
+	container: "bg-black",
 	row: "flex",
 	upDownArrow: "flex flex-col justify-between",
+	arrowKey: "!text-sm",
+	smallArrowKey:
+		"!h-[18px] xl:!h-[22px] 3xl:!h-[30px] w-10 xl:w-12 3xl:w-16 !text-sm",
 };
 
-//
-const Keyboard = ({ className }: Props) => {
-	const pressedKey = UseKeyState();
-	const isKeyActive = (content: string) =>
-		content?.toLowerCase() === pressedKey;
+//----------------------------------------------
+const Keyboard = ({ className, activeKey, forTest = false }: Props) => {
+	const currentKey = forTest ? UseKeyState() : activeKey;
+	const isKeyActive = useCallback(
+		(content: string) => {
+			return content?.toLowerCase() === currentKey;
+		},
+		[currentKey]
+	);
 
 	return (
 		<div className={keyboardStyles.container + ` ${className}`}>
@@ -49,24 +58,24 @@ const Keyboard = ({ className }: Props) => {
 				))}
 				<Key
 					keyData={ARROW_KEY}
-					className="-rotate-90 !text-sm"
+					className={keyboardStyles.arrowKey + " -rotate-90"}
 					active={false}
 				/>
 				<div className={keyboardStyles.upDownArrow}>
 					<Key
 						keyData={ARROW_KEY}
-						className="!h-[18px] xl:!h-[22px] 3xl:!h-[30px] w-10 xl:w-12 3xl:w-16 !text-sm"
+						className={keyboardStyles.smallArrowKey}
 						active={isKeyActive(ARROW_KEY.value)}
 					/>
 					<Key
 						keyData={ARROW_KEY}
-						className="!h-[18px] xl:!h-[22px] 3xl:!h-[30px] w-10 xl:w-12 3xl:w-16 rotate-180 !text-sm"
+						className={keyboardStyles.smallArrowKey + " rotate-180"}
 						active={false}
 					/>
 				</div>
 				<Key
 					keyData={ARROW_KEY}
-					className="rotate-90 !text-sm"
+					className={keyboardStyles.arrowKey + " rotate-90"}
 					active={false}
 				/>
 			</div>
@@ -74,4 +83,4 @@ const Keyboard = ({ className }: Props) => {
 	);
 };
 
-export default Keyboard;
+export default React.memo(Keyboard);
