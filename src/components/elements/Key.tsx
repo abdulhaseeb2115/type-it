@@ -13,12 +13,11 @@ type Props = {
 };
 
 const keyStyles = {
-	key: "bg-gray-300 h-10 xl:h-12 3xl:h-16 text-black rounded flex items-center justify-center m-0.5",
-	active: "!bg-red-200",
-	disabled: "!bg-gray-400",
+	key: "h-10 xl:h-12 3xl:h-16 rounded-md flex items-center justify-center m-0.5 xl:m-1 3xl:m-1.5 bg-primary-1 text-white font-bold opacity-60 select-none cursor-default duration-100 ease-in-out",
+	active: "scale-[85%] !opacity-100",
+	disabled: "!opacity-40",
 	main: "aspect-square text-sm xl:text-base",
-	other:
-		"min-w-10 xl:min-w-12 3xl:min-w-16 px-2 xl:px-4 text-xs xl:text-sm min-w-10 ",
+	other: "min-w-10 xl:min-w-12 3xl:min-w-16 px-2 xl:px-4 text-xs xl:text-sm ",
 	wide: "flex-1",
 };
 
@@ -31,7 +30,7 @@ const Key = ({ className, keyData, active }: Props) => {
 	return (
 		<span
 			className={`${keyStyle} 
-			${active && !keyData.disabled && keyStyles.active} 
+			${active && keyStyles.active} 
 			${!!keyData.disabled && keyStyles.disabled} 
 			${!!keyData.wide && keyStyles.wide} 
 			${className}`}

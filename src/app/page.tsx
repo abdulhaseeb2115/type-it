@@ -1,11 +1,14 @@
 import React from "react";
 // pages
 import Home from "./Home";
+// components
+import Header from "@/components/Header";
 
 //----------------------------------------------
 export default function APP() {
 	return (
-		<main className="">
+		<main className="relative">
+			<Header />
 			<Home />
 		</main>
 	);

@@ -23,7 +23,7 @@ const UseTextAnimation = ({ text, duration = 2 }: Props) => {
 
 				setTimeout(() => {
 					setCurrentKey(null);
-				}, duration * 500);
+				}, duration * 300);
 
 				i = i === text.length - 1 ? 0 : i + 1;
 			}, duration * 1000);

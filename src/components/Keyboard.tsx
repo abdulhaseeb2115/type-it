@@ -17,9 +17,9 @@ type Props = {
 };
 
 const keyboardStyles = {
-	container: "bg-black",
+	container: "p-2 3xl:p-4 border-2 border-primary-2 rounded-2xl",
 	row: "flex",
-	upDownArrow: "flex flex-col justify-between",
+	upDownContainer: "flex flex-col justify-between",
 	arrowKey: "!text-sm",
 	smallArrowKey:
 		"!h-[18px] xl:!h-[22px] 3xl:!h-[30px] w-10 xl:w-12 3xl:w-16 !text-sm",
@@ -61,15 +61,15 @@ const Keyboard = ({ className, activeKey, forTest = false }: Props) => {
 					className={keyboardStyles.arrowKey + " -rotate-90"}
 					active={false}
 				/>
-				<div className={keyboardStyles.upDownArrow}>
+				<div className={keyboardStyles.upDownContainer}>
 					<Key
 						keyData={ARROW_KEY}
-						className={keyboardStyles.smallArrowKey}
+						className={keyboardStyles.smallArrowKey + " !mb-0"}
 						active={isKeyActive(ARROW_KEY.value)}
 					/>
 					<Key
 						keyData={ARROW_KEY}
-						className={keyboardStyles.smallArrowKey + " rotate-180"}
+						className={keyboardStyles.smallArrowKey + " rotate-180 !mt-0"}
 						active={false}
 					/>
 				</div>

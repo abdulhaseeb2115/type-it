@@ -1,12 +1,4 @@
-"use client";
-
-import React, { useCallback } from "react";
-// components
-import Key from "./elements/Key";
-// config
-import { ARROW_KEY, MAIN_KEYS, OTHER_KEYS } from "@/config/keyboardKeys";
-// hooks
-import UseKeyState from "@/hooks/UseKeyState";
+import React from "react";
 
 //----------------------------------------------
 
@@ -17,12 +9,14 @@ type Props = {
 };
 
 const typingLogoStyles = {
-	container: "text-9xl font-black m-5 uppercase",
-	letter: "duration-200 ease-in-out",
+	container: "font-black m-5 uppercase",
+	letter:
+		"text-6xl 3xl:text-7xl text-primary-2 duration-300 ease-in-out opacity-30",
+	activeLetter: "!text-8xl 3xl:!text-9xl !opacity-100",
 };
 
 //----------------------------------------------
-const TypingLogo = ({ className, activeKeyIndex, text }: Props) => {
+const TypingAnimation = ({ className, activeKeyIndex, text }: Props) => {
 	const letters = text.split("");
 
 	return (
@@ -32,7 +26,7 @@ const TypingLogo = ({ className, activeKeyIndex, text }: Props) => {
 					key={`${letter} ${index}`}
 					className={
 						typingLogoStyles.letter +
-						` ${index <= activeKeyIndex ? "!text-red-500" : "text-white"}`
+						` ${index <= activeKeyIndex && typingLogoStyles.activeLetter}`
 					}
 				>
 					{letter === " " ? <> &nbsp;</> : letter}
@@ -42,4 +36,4 @@ const TypingLogo = ({ className, activeKeyIndex, text }: Props) => {
 	);
 };
 
-export default React.memo(TypingLogo);
+export default React.memo(TypingAnimation);
