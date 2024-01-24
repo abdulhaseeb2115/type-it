@@ -9,7 +9,7 @@ type Props = {
 };
 
 const typingLogoStyles = {
-	container: "font-black m-5 uppercase",
+	container: "font-black m-5 uppercase h-36 flex items-center",
 	letter:
 		"text-6xl 3xl:text-7xl text-primary-2 duration-300 ease-in-out opacity-30",
 	activeLetter: "!text-8xl 3xl:!text-9xl !opacity-100",

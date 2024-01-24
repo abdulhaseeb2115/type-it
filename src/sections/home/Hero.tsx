@@ -1,30 +1,35 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 // hooks
 import UseTextAnimation from "@/hooks/UseTextAnimation";
 // components
 import Section from "@/components/layouts/Section";
 import Keyboard from "@/components/Keyboard";
-import TypingLogo from "@/components/TypingAnimation";
-import ScrollIcon from "@/components/icons/ScrollIcon";
+import TypingAnimation from "@/components/TypingAnimation";
+//----------------------------------------------
+
+type HeroProps = {
+	phrase: string;
+};
 
 //----------------------------------------------
-const Hero = () => {
+const Hero = ({ phrase }: HeroProps) => {
 	const animationOptions = {
-		text: "speed up, type it",
-		duration: 1,
+		text: phrase,
+		duration: 0.3,
 	};
 	const { key, index } = UseTextAnimation(animationOptions);
-
 	return (
-		<Section className="relative min-h-[800px] h-screen flex flex-col items-center justify-center bg-dark-2">
-			<TypingLogo
+		<Section className="relative h-screen flex flex-col items-center justify-center bg-dark-2">
+			<TypingAnimation
 				text={animationOptions.text}
 				activeKeyIndex={index}
 				className="mb-10 3xl:mb-20 mt-auto"
 			/>
 			<Keyboard forTest={false} activeKey={key} />
-			<ScrollIcon className="h-14 3xl:h-20 w-auto stroke-white mt-10 3xl:mt-auto cursor-pointer hover:scale-75 duration-200 ease-in-out" />
+			{/* <button className="mt-10 3xl:mt-20 bg-primary-2 py-3 px-16 rounded-full font-medium hover:scale-75 duration-200 ease-in-out">
+				Start Test
+			</button> */}
 		</Section>
 	);
 };

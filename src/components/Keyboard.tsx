@@ -17,7 +17,7 @@ type Props = {
 };
 
 const keyboardStyles = {
-	container: "p-2 3xl:p-4 border-2 border-primary-2 rounded-2xl",
+	container: "p-2 3xl:p-4s rounded-2xl",
 	row: "flex",
 	upDownContainer: "flex flex-col justify-between",
 	arrowKey: "!text-sm",
@@ -30,7 +30,7 @@ const Keyboard = ({ className, activeKey, forTest = false }: Props) => {
 	const currentKey = forTest ? UseKeyState() : activeKey;
 	const isKeyActive = useCallback(
 		(content: string) => {
-			return content?.toLowerCase() === currentKey;
+			return content?.toLowerCase() === currentKey?.toLowerCase();
 		},
 		[currentKey]
 	);

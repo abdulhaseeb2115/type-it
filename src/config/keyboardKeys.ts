@@ -48,7 +48,7 @@ export const MAIN_KEYS: Key[][] = [
 		{ value: "l" },
 		{ value: ";" },
 		{ value: "'" },
-		{ value: "enter", wide: true },
+		{ value: "enter", wide: true, disabled: true },
 	],
 	[
 		{ value: "shift", wide: true, disabled: true },

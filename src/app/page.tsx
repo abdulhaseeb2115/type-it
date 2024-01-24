@@ -1,14 +1,11 @@
 import React from "react";
 // pages
 import Home from "./Home";
-// components
-import Header from "@/components/Header";
 
 //----------------------------------------------
 export default function APP() {
 	return (
 		<main className="relative">
-			<Header />
 			<Home />
 		</main>
 	);
@@ -17,8 +14,11 @@ export default function APP() {
 //----------------------------------------------
 
 /**
- * LOGIN
- * LANDING / HOME
- * HISTORY
- * TEST
+ * >> LOGIN/Register(Overlay)
+ * >> LANDING (typing/keyboard animation)
+ *    DASHBOARD (avatar, personal data, avg, last score)
+ *    LEADERBOARD
+ *    HISTORY
+ *    SETTINGS
+ *    TEST
  */

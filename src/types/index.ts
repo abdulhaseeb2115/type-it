@@ -6,4 +6,10 @@ export type Key = {
 	wide?: boolean;
 };
 
+export enum ModalState {
+	Login,
+	Register,
+	Closed,
+}
+
 //----------------------------------------------

@@ -2,7 +2,7 @@ import * as React from "react";
 import { SVGProps } from "react";
 
 //----------------------------------------------
-const ScrollIcon = (props: SVGProps<SVGSVGElement>) => (
+const ChevronRightIcon = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
@@ -13,16 +13,16 @@ const ScrollIcon = (props: SVGProps<SVGSVGElement>) => (
 			stroke="inherit"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth={0.5}
-			d="M5 15a7 7 0 0 0 14 0V9A7 7 0 0 0 5 9v6ZM12 6v8"
+			strokeWidth={2}
+			d="M8 17v-2a4 4 0 0 1 4-4h5"
 		/>
 		<path
 			stroke="inherit"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth={0.5}
-			d="m15 11-3 3-3-3"
+			strokeWidth={2}
+			d="m14 8 3 3-3 3"
 		/>
 	</svg>
 );
-export default ScrollIcon;
+export default ChevronRightIcon;

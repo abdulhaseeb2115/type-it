@@ -13,8 +13,8 @@ type Props = {
 };
 
 const keyStyles = {
-	key: "h-10 xl:h-12 3xl:h-16 rounded-md flex items-center justify-center m-0.5 xl:m-1 3xl:m-1.5 bg-primary-1 text-white font-bold opacity-60 select-none cursor-default duration-100 ease-in-out",
-	active: "scale-[85%] !opacity-100",
+	key: "h-10 xl:h-12 3xl:h-16 rounded-md flex items-center justify-center m-0.5 xl:m-1 3xl:m-1.5 border-2 border-primary-1 text-white font-bold opacity-80 select-none cursor-default duration-100 ease-in-out",
+	active: "scale-[85%] !opacity-100 bg-primary-1 bg-opacity-50",
 	disabled: "!opacity-40",
 	main: "aspect-square text-sm xl:text-base",
 	other: "min-w-10 xl:min-w-12 3xl:min-w-16 px-2 xl:px-4 text-xs xl:text-sm ",
