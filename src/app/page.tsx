@@ -1,6 +1,6 @@
 import React from "react";
 // pages
-import Home from "./Home";
+import Home from "./home/page";
 
 //----------------------------------------------
 export default function APP() {

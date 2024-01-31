@@ -30,7 +30,7 @@ const headerStyles = {
 //----------------------------------------------
 const Header = () => {
 	const [showModal, setShowModal] = useState<ModalState>(ModalState.Closed);
-	let user = false;
+	let user = !false;
 	return (
 		<nav className={headerStyles.nav}>
 			<Section className={headerStyles.container}>
