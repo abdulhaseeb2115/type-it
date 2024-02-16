@@ -16,7 +16,7 @@ type DropdownProps = {
 const headerDropdownStyles = {
 	container: "relative",
 	avatar:
-		"relative bg-primary-1 rounded-full p-0.5 pb-0 z-10 cursor-pointer hover:opacity-80 duration-200 ease-in-out",
+		"relative overflow-hidden h-10 md:h-14 aspect-square bg-primary-1 rounded-full z-10 cursor-pointer hover:opacity-80 duration-200 ease-in-out",
 	optionsContainer:
 		"absolute top-0 left-1/2 -translate-x-1/2 opacity-0 duration-300 ease-in-out -z-20",
 };
@@ -42,14 +42,15 @@ const HeaderDropdown = ({ className, children }: DropdownProps) => {
 			ref={(node) => clickOutsideRef(node)}
 			className={twMerge(headerDropdownStyles.container, className)}
 		>
-			<Image
-				src={bg}
-				height={60}
-				width={60}
-				className={headerDropdownStyles.avatar}
-				alt="avatar_img"
-				onClick={() => toggleDropdown()}
-			/>
+			<div className={headerDropdownStyles.avatar}>
+				<Image
+					src={bg}
+					alt="avatar_img"
+					fill
+					className="mt-1"
+					onClick={() => toggleDropdown()}
+				/>
+			</div>
 
 			<div
 				className={twMerge(

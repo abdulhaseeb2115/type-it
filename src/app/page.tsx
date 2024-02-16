@@ -1,4 +1,6 @@
 import React from "react";
+// layout
+import Page from "@/components/layouts/Page";
 // sections
 import Hero from "@/sections/home/Hero";
 // utils
@@ -8,9 +10,9 @@ import { getRandomPhrase } from "@/utils/getRandomPhrase";
 const App = () => {
 	const phrase = getRandomPhrase();
 	return (
-		<main className="">
+		<Page className="">
 			<Hero phrase={phrase} />
-		</main>
+		</Page>
 	);
 };
 
@@ -21,9 +23,9 @@ export default App;
 /**
  * >> LOGIN/Register(Overlay)
  * >> LANDING (typing/keyboard animation)
- * >  TEST
- *    DASHBOARD (avatar, personal data, avg, last score)
+ * >  DASHBOARD (avatar, personal data, avg, last score)
  *    LEADERBOARD
  *    HISTORY
  *    SETTINGS
+ *    TEST
  */

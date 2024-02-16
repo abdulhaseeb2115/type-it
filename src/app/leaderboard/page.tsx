@@ -1,8 +1,10 @@
 import React from "react";
+// layout
+import Page from "@/components/layouts/Page";
 
 //----------------------------------------------
-const Leaderboard = () => {
-	return <div className=""></div>;
+const Dashboard = () => {
+	return <Page className="">dsfs</Page>;
 };
 
-export default Leaderboard;
+export default Dashboard;

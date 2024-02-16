@@ -14,6 +14,7 @@ import UserIcon from "../components/icons/UserIcon";
 import HistoryIcon from "../components/icons/HistoryIcon";
 // type
 import { ModalState } from "@/types";
+// sections
 import LoginForm from "./auth/LoginForm";
 import RegisterForm from "./auth/RegisterForm";
 
@@ -24,13 +25,13 @@ const headerStyles = {
 	container:
 		"relative !py-5 3xl:!py-10 w-full flex items-center justify-between",
 	link: "text-sm md:text-base p-2 hover:scale-110",
-	rightContainer: "flex items-center gap-12",
+	rightContainer: "flex items-center gap-4 md:gap-12",
 };
 
 //----------------------------------------------
 const Header = () => {
 	const [showModal, setShowModal] = useState<ModalState>(ModalState.Closed);
-	let user = false;
+	let user = !false;
 	return (
 		<nav className={headerStyles.nav}>
 			<Section className={headerStyles.container}>
@@ -38,12 +39,12 @@ const Header = () => {
 
 				{!!user ? (
 					<div className={headerStyles.rightContainer}>
-						<div className="flex items-end gap-5">
+						<div className="flex items-end gap-2 md:gap-5">
 							<Link href="/" className={headerStyles.link}>
 								<HomeIcon className="h-5 aspect-square stroke-white" />
 							</Link>
 
-							<Link href="/rankings" className={headerStyles.link}>
+							<Link href="/dashboard" className={headerStyles.link}>
 								<RankingIcon className="h-5 aspect-square fill-white" />
 							</Link>
 						</div>
