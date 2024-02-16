@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 // hooks
 import UseClickOutside from "@/hooks/UseClickOutside";
-import Image from "next/image";
-//
+// assets
 import bg from "../assets/bg_1.png";
 //----------------------------------------------
 
@@ -39,7 +40,7 @@ const HeaderDropdown = ({ className, children }: DropdownProps) => {
 	return (
 		<div
 			ref={(node) => clickOutsideRef(node)}
-			className={headerDropdownStyles.container + ` ${className}`}
+			className={twMerge(headerDropdownStyles.container, className)}
 		>
 			<Image
 				src={bg}
@@ -51,10 +52,10 @@ const HeaderDropdown = ({ className, children }: DropdownProps) => {
 			/>
 
 			<div
-				className={
-					headerDropdownStyles.optionsContainer +
-					` ${isOpen && " !opacity-100 !top-full !mt-10 z-10"}`
-				}
+				className={twMerge(
+					headerDropdownStyles.optionsContainer,
+					isOpen && "!opacity-100 !top-full !mt-10 z-10"
+				)}
 			>
 				{children}
 			</div>

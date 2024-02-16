@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback } from "react";
+import { twMerge } from "tailwind-merge";
 // components
 import Key from "./elements/Key";
 // config
@@ -36,7 +37,7 @@ const Keyboard = ({ className, activeKey, forTest = false }: Props) => {
 	);
 
 	return (
-		<div className={keyboardStyles.container + ` ${className}`}>
+		<div className={twMerge(keyboardStyles.container, className)}>
 			{MAIN_KEYS?.map?.((row, i) => (
 				<div key={`row${i}`} className={keyboardStyles.row}>
 					{row?.map?.((keyData, j) => (

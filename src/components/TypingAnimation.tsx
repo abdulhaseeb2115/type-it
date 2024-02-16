@@ -1,4 +1,5 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 //----------------------------------------------
 
@@ -21,14 +22,14 @@ const TypingAnimation = ({ className, activeKeyIndex, text }: Props) => {
 	const letters = text.split("");
 
 	return (
-		<div className={typingLogoStyles.container + ` ${className}`}>
+		<div className={twMerge(typingLogoStyles.container, className)}>
 			{letters?.map((letter, index) => (
 				<span
 					key={`${letter} ${index}`}
-					className={
-						typingLogoStyles.letter +
-						` ${index <= activeKeyIndex && typingLogoStyles.activeLetter}`
-					}
+					className={twMerge(
+						typingLogoStyles.letter,
+						index <= activeKeyIndex && typingLogoStyles.activeLetter
+					)}
 				>
 					{letter === " " ? <> &nbsp;</> : letter}
 				</span>

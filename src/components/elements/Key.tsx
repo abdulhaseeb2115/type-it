@@ -1,4 +1,5 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 // utils
 import capitalize from "@/utils/capitalize";
 // types
@@ -29,11 +30,13 @@ const Key = ({ className, keyData, active }: Props) => {
 
 	return (
 		<span
-			className={`${keyStyle} 
-			${active && keyStyles.active} 
-			${!!keyData.disabled && keyStyles.disabled} 
-			${!!keyData.wide && keyStyles.wide} 
-			${className}`}
+			className={twMerge(
+				keyStyle,
+				active && keyStyles.active,
+				!!keyData.disabled && keyStyles.disabled,
+				!!keyData.wide && keyStyles.wide,
+				className
+			)}
 		>
 			{capitalize(keyData.value)}
 		</span>

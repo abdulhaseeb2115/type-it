@@ -1,7 +1,9 @@
 import React, { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 // types
-import { ModalState } from "@/types";
 import ChevronRightIcon from "../icons/ChevronRightIcon";
+// hooks
+import UseClickOutside from "@/hooks/UseClickOutside";
 
 //----------------------------------------------
 
@@ -28,11 +30,18 @@ const Modal = ({ children, className, open, onClose }: Props) => {
 		onClose();
 	};
 
+	const clickOutsideRef = UseClickOutside(() => {
+		onClose();
+	});
+
 	return (
 		<aside
-			className={
-				modalStyles.modal + ` ${!open && modalStyles.closed}` + ` ${className}`
-			}
+			ref={(node) => clickOutsideRef(node)}
+			className={twMerge(
+				modalStyles.modal,
+				!open && modalStyles.closed,
+				className
+			)}
 		>
 			<div className={modalStyles.container}>
 				<button className={modalStyles.button} onClick={closeModal}>

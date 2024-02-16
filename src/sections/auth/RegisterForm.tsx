@@ -21,7 +21,6 @@ const RegisterForm = ({ changeModal }: Props) => {
 	return (
 		<form
 			className={registerFormStyles.container}
-			action="#"
 			onSubmit={(e) => e.preventDefault()}
 		>
 			<div className={registerFormStyles.formGroup}>

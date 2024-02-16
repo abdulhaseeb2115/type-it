@@ -21,7 +21,6 @@ const LoginForm = ({ changeModal }: Props) => {
 	return (
 		<form
 			className={loginFormStyles.container}
-			action="#"
 			onSubmit={(e) => e.preventDefault()}
 		>
 			<div className={loginFormStyles.formGroup}>

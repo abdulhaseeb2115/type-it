@@ -1,4 +1,5 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 //----------------------------------------------
 
 type Props = {
@@ -11,7 +12,7 @@ const logoStyles = {
 
 //----------------------------------------------
 const Logo = ({ className }: Props) => {
-	return <div className={logoStyles.logo + ` ${className}`}>TYPE_IT</div>;
+	return <div className={twMerge(logoStyles.logo, className)}>TYPE_IT</div>;
 };
 
 export default Logo;
