@@ -10,7 +10,7 @@ type Props = {
 //----------------------------------------------
 const Section = ({ children, className }: Props) => {
 	return (
-		<section className={`p-10 lg:p-20 xl:p-24 ${className}`}>
+		<section className={`p-6 md:p-10 lg:p-20 xl:p-24 ${className}`}>
 			{children}
 		</section>
 	);

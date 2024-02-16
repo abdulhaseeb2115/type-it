@@ -6,7 +6,7 @@ type Props = {
 };
 
 const logoStyles = {
-	logo: "text-white font-black italic tracking-wider text-3xl cursor-pointer",
+	logo: "text-white font-black italic tracking-wider text-2xl md:text-3xl cursor-pointer",
 };
 
 //----------------------------------------------

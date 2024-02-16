@@ -20,13 +20,13 @@ const Hero = ({ phrase }: HeroProps) => {
 	};
 	const { key, index } = UseTextAnimation(animationOptions);
 	return (
-		<Section className="relative h-screen flex flex-col items-center justify-center bg-dark-2 pt-12">
+		<Section className="relative h-screen flex flex-col items-center justify-center bg-dark-2 pt-12 overflow-y-hidden">
 			<TypingAnimation
 				text={animationOptions.text}
 				activeKeyIndex={index}
-				className="mb-10"
+				className="mb-10 max-md:rotate-90"
 			/>
-			<Keyboard forTest={false} activeKey={key} />
+			<Keyboard forTest={false} activeKey={key} className="max-md:hidden" />
 		</Section>
 	);
 };
