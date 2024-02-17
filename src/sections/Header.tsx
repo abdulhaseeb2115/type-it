@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
+import { usePathname } from "next/navigation";
 // layout
 import Section from "../components/layouts/Section";
 // components
@@ -25,12 +27,14 @@ const headerStyles = {
 	nav: "fixed top-0 left-0 w-full z-50",
 	container:
 		"relative !py-5 3xl:!py-10 w-full flex items-center justify-between",
-	link: "text-sm md:text-base p-2 hover:scale-110",
+	link: "text-sm md:text-base py-2 mx-1 hover:scale-110",
+	active: "border-b border-white",
 	rightContainer: "flex items-center gap-4 md:gap-12",
 };
 
 //----------------------------------------------
 const Header = () => {
+	const pathname = usePathname();
 	const [showModal, setShowModal] = useState<ModalState>(ModalState.Closed);
 	let user = !false;
 	return (
@@ -41,11 +45,23 @@ const Header = () => {
 				{!!user ? (
 					<div className={headerStyles.rightContainer}>
 						<div className="flex items-end gap-2 md:gap-5">
-							<Link href="/" className={headerStyles.link}>
+							<Link
+								href="/"
+								className={twMerge(
+									headerStyles.link,
+									pathname === "/" && headerStyles.active
+								)}
+							>
 								<HomeIcon className="h-5 aspect-square stroke-white" />
 							</Link>
 
-							<Link href="/dashboard" className={headerStyles.link}>
+							<Link
+								href="/dashboard"
+								className={twMerge(
+									headerStyles.link,
+									pathname === "/dashboard" && headerStyles.active
+								)}
+							>
 								<RankingIcon className="h-5 aspect-square fill-white" />
 							</Link>
 						</div>
