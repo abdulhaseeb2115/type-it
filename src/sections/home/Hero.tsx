@@ -1,26 +1,34 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { twMerge } from "tailwind-merge";
 // hooks
 import UseTextAnimation from "@/hooks/UseTextAnimation";
-// components
+// layout
 import Section from "@/components/layouts/Section";
+// components
 import Keyboard from "@/components/Keyboard";
 import TypingAnimation from "@/components/TypingAnimation";
 //----------------------------------------------
 
 type HeroProps = {
 	phrase: string;
+	className?: string;
+};
+
+const heroStyles = {
+	section:
+		"relative h-screen flex flex-col items-center justify-center bg-dark-2 overflow-hidden",
 };
 
 //----------------------------------------------
-const Hero = ({ phrase }: HeroProps) => {
+const Hero = ({ phrase, className }: HeroProps) => {
 	const animationOptions = {
 		text: phrase,
 		duration: 0.3,
 	};
 	const { key, index } = UseTextAnimation(animationOptions);
 	return (
-		<Section className="relative h-screen flex flex-col items-center justify-center bg-dark-2 pt-12 overflow-y-hidden">
+		<Section className={twMerge(heroStyles.section, className)}>
 			<TypingAnimation
 				text={animationOptions.text}
 				activeKeyIndex={index}

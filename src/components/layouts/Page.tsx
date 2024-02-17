@@ -9,9 +9,7 @@ type Props = {
 
 //----------------------------------------------
 const Page = ({ children, className }: Props) => {
-	return (
-		<main className={twMerge("pt-16 md:pt-28", className)}>{children}</main>
-	);
+	return <main className={twMerge("", className)}>{children}</main>;
 };
 
 export default Page;

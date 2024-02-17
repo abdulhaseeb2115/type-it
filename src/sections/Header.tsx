@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-// components
+// layout
 import Section from "../components/layouts/Section";
+// components
 import Logo from "../components/elements/Logo";
 import HeaderDropdown from "../components/HeaderDropdown";
 import Modal from "../components/layouts/Modal";
