@@ -17,7 +17,7 @@ type HeroProps = {
 
 const heroStyles = {
 	section:
-		"relative h-screen flex flex-col items-center justify-center bg-dark-2 overflow-hidden",
+		"relative h-screen flex flex-col items-center justify-center overflow-hidden",
 };
 
 //----------------------------------------------

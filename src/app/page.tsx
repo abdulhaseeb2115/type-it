@@ -10,7 +10,7 @@ import { getRandomPhrase } from "@/utils/getRandomPhrase";
 const App = () => {
 	const phrase = getRandomPhrase();
 	return (
-		<Page className="">
+		<Page>
 			<Hero phrase={phrase} />
 		</Page>
 	);
