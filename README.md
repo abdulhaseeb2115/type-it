@@ -1,7 +1,5 @@
 # TYPE IT
 
-This is a typing website.
-
 ## Getting Started
 
 First, run the development server:
