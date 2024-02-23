@@ -1,5 +1,5 @@
-// config
-import { PHRASES } from "@/config/heroPhrases";
+// constants
+import { PHRASES } from "@/constants";
 
 //----------------------------------------------
 export const getRandomPhrase = (): string => {

@@ -4,8 +4,8 @@ import React, { useCallback } from "react";
 import { twMerge } from "tailwind-merge";
 // components
 import Key from "./elements/Key";
-// config
-import { ARROW_KEY, MAIN_KEYS, OTHER_KEYS } from "@/config/keyboardKeys";
+// constants
+import { ARROW_KEY, MAIN_KEYS, OTHER_KEYS } from "@/constants";
 // hooks
 import UseKeyState from "@/hooks/UseKeyState";
 

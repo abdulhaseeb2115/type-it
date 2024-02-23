@@ -7,10 +7,14 @@ type Props = {
 	className?: string;
 } & HTMLProps<HTMLElement>;
 
+const pageStyles = {
+	page: "bg-dark-2",
+};
+
 //----------------------------------------------
 const Page = ({ children, className, ...props }: Props) => {
 	return (
-		<main className={twMerge("bg-dark-2", className)} {...props}>
+		<main className={twMerge(pageStyles.page, className)} {...props}>
 			{children}
 		</main>
 	);

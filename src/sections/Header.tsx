@@ -24,9 +24,8 @@ import RegisterForm from "./auth/RegisterForm";
 //----------------------------------------------
 
 const headerStyles = {
-	nav: "fixed top-0 left-0 w-full z-50",
-	container:
-		"relative !py-5 3xl:!py-10 w-full flex items-center justify-between",
+	nav: "fixed top-0 left-0 h-16 xl:h-20 max-h-20 w-full z-50",
+	container: "relative !py-0 h-full w-full flex items-center justify-between",
 	link: "text-sm md:text-base py-2 mx-1 hover:scale-110",
 	active: "border-b border-white",
 	rightContainer: "flex items-center gap-4 md:gap-12",
@@ -36,7 +35,7 @@ const headerStyles = {
 const Header = () => {
 	const pathname = usePathname();
 	const [showModal, setShowModal] = useState<ModalState>(ModalState.Closed);
-	let user = !false;
+	let user = false;
 	return (
 		<nav className={headerStyles.nav}>
 			<Section className={headerStyles.container}>

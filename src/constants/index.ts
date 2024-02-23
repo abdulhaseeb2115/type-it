@@ -1,7 +1,39 @@
+// assets
+import avatar_1 from "@/assets/avatars/avatar_1.png";
+import avatar_2 from "@/assets/avatars/avatar_2.png";
+import avatar_3 from "@/assets/avatars/avatar_3.png";
+import avatar_4 from "@/assets/avatars/avatar_4.png";
 // types
-import { Key } from "@/types";
+import { AvatarCollection, Key, RankColorCollection } from "@/types";
 
-//
+//----------------------------------------------
+//----------------------------------------------
+
+export const AVATARS: AvatarCollection = {
+	1: avatar_1,
+	2: avatar_2,
+	3: avatar_3,
+	4: avatar_4,
+};
+
+//----------------------------------------------
+
+export const PHRASES: string[] = [
+	"Speed Up, type it",
+	"Type it faster",
+	"Quickly type it",
+	"Go ahead, type it",
+	"Now, type it swiftly",
+	"Type it quickly",
+	"Accelerate and type it",
+	"Hurry, type it up",
+	"Type it up, speed",
+	"Go for it, type it",
+	"Swiftly type it now",
+];
+
+//----------------------------------------------
+
 export const MAIN_KEYS: Key[][] = [
 	[
 		{ value: "~", disabled: true },
@@ -65,7 +97,7 @@ export const MAIN_KEYS: Key[][] = [
 		{ value: "shift", wide: true, disabled: true },
 	],
 ];
-//
+
 export const OTHER_KEYS: Key[] = [
 	{ value: "ctrl", disabled: true },
 	{ value: "fn", disabled: true },
@@ -75,6 +107,15 @@ export const OTHER_KEYS: Key[] = [
 	{ value: "alt", disabled: true },
 	{ value: "ctrl", disabled: true },
 ];
-//
+
 export const ARROW_KEY: Key = { value: "▲", disabled: true };
-//
+
+//----------------------------------------------
+
+export const TROPHY_COLORS_BY_RANK: RankColorCollection = {
+	1: "#facc15",
+	2: "#e2e8f0",
+	3: "#d97706",
+};
+
+//----------------------------------------------

@@ -38,7 +38,7 @@ const RegisterForm = ({ changeModal }: Props) => {
 				<label htmlFor="email">Email</label>
 				<input
 					type="email"
-					id="email"
+					id="regEmail"
 					placeholder="abc@xyz.com"
 					className={registerFormStyles.input}
 					required
@@ -49,7 +49,7 @@ const RegisterForm = ({ changeModal }: Props) => {
 				<label htmlFor="password">Password</label>
 				<input
 					type="password"
-					id="password"
+					id="regPassword"
 					placeholder="********"
 					className={registerFormStyles.input}
 					required
@@ -60,7 +60,7 @@ const RegisterForm = ({ changeModal }: Props) => {
 				<label htmlFor="confirmPassword">Confirm Password</label>
 				<input
 					type="password"
-					id="confirmPassword"
+					id="regConfirmPassword"
 					placeholder="********"
 					className={registerFormStyles.input}
 					required
