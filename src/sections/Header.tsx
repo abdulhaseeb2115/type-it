@@ -24,7 +24,7 @@ import RegisterForm from "./auth/RegisterForm";
 //----------------------------------------------
 
 const headerStyles = {
-	nav: "fixed top-0 left-0 h-16 xl:h-20 max-h-20 w-full z-50",
+	nav: "h-16 xl:h-20 max-h-20 w-full z-50",
 	container: "relative !py-0 h-full w-full flex items-center justify-between",
 	link: "text-sm md:text-base py-2 mx-1 hover:scale-110",
 	active: "border-b border-white",

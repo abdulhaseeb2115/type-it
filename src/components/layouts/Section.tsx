@@ -11,10 +11,7 @@ type Props = {
 const Section = ({ children, className, ...props }: Props) => {
 	return (
 		<section
-			className={twMerge(
-				"p-6 max-xl:!pt-20 md:p-10 lg:p-20 xl:p-24",
-				className
-			)}
+			className={twMerge("p-6 md:py-8 md:px-10 lg:px-20 xl:px-24 ", className)}
 			{...props}
 		>
 			{children}

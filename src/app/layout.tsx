@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { twMerge } from "tailwind-merge";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 // components
@@ -21,7 +22,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={font.className}>
+			<body
+				className={twMerge(
+					font.className,
+					"flex flex-col min-h-screen bg-dark-2 text-white overflow-x-hidden"
+				)}
+			>
 				<Header />
 				{children}
 			</body>

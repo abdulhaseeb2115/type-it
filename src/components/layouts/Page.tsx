@@ -8,7 +8,7 @@ type Props = {
 } & HTMLProps<HTMLElement>;
 
 const pageStyles = {
-	page: "bg-dark-2",
+	page: "flex-1 flex",
 };
 
 //----------------------------------------------
