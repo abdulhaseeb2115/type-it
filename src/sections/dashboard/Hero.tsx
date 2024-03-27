@@ -4,8 +4,9 @@ import { twMerge } from "tailwind-merge";
 // layout
 import Section from "@/components/layouts/Section";
 // components
-import { Marquee } from "@/components/Marquee";
+import Marquee from "@/components/Marquee";
 import LeaderboardCard from "@/components/LeaderboardCard";
+import GlassmorphismCard from "@/components/GlassmorphismCard";
 //----------------------------------------------
 
 const TOP_10_RANKINGS = [
@@ -25,14 +26,12 @@ type HeroProps = {
 };
 
 const heroStyles = {
-	section: "min-h-screen flex gap-4 overflow-x-hidden",
-	glassMorphism:
-		"bg-dark-1 bg-opacity-5 backdrop-blur-lg border border-dark-1 border-opacity-20",
+	section: " flex gap-4 overflow-x-hidden",
 	heading: "text-primary-1 font-bold text-xl uppercase tracking-wider",
 	left: "bg-slate-5 flex-1",
 	divider: "bg-primary-3 h-[200px] 3xl:h-[300px] w-0.5 my-auto rounded-full",
 	right: "w-64 relative flex items-center justify-center overflow-hidden",
-	marquee: "max-h-[400px] 3xl:max-h-[600px] overflow-hidden mt-5 3xl:mt-10",
+	marquee: "max-h-[400px] 3xl:max-h-[600px] mt-5 3xl:mt-10",
 };
 
 //----------------------------------------------
@@ -44,12 +43,7 @@ const Hero = ({ className }: HeroProps) => {
 			<div className={heroStyles.divider} />
 
 			<div className={heroStyles.right}>
-				<div
-					className={twMerge(
-						"w-full p-6 rounded-2xl",
-						heroStyles.glassMorphism
-					)}
-				>
+				<GlassmorphismCard className={twMerge("w-full p-6 rounded-2xl")}>
 					<h1 className={heroStyles.heading}>Leaderboard</h1>
 					<Marquee direction="up" className={heroStyles.marquee}>
 						{TOP_10_RANKINGS?.map?.(({ avatarId, userName }, index) => (
@@ -61,7 +55,7 @@ const Hero = ({ className }: HeroProps) => {
 							/>
 						))}
 					</Marquee>
-				</div>
+				</GlassmorphismCard>
 			</div>
 		</Section>
 	);
