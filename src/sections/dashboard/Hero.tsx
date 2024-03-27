@@ -26,12 +26,14 @@ type HeroProps = {
 };
 
 const heroStyles = {
-	section: " flex gap-4 overflow-x-hidden",
+	section:
+		"flex-1 flex flex-col xl:flex-row items-center gap-4 overflow-x-hidden",
 	heading: "text-primary-1 font-bold text-xl uppercase tracking-wider",
-	left: "bg-slate-5 flex-1",
-	divider: "bg-primary-3 h-[200px] 3xl:h-[300px] w-0.5 my-auto rounded-full",
-	right: "w-64 relative flex items-center justify-center overflow-hidden",
-	marquee: "max-h-[400px] 3xl:max-h-[600px] mt-5 3xl:mt-10",
+	left: "flex-1",
+	divider:
+		"bg-primary-3 h-0.5 xl:h-[200px] 3xl:h-[300px] w-1/2 xl:w-0.5 my-auto rounded-full",
+	right: "w-full xl:h-full xl:w-64 relative overflow-hidden",
+	rightContainer: "w-full p-6 flex flex-col rounded-2xl gap-5",
 };
 
 //----------------------------------------------
@@ -43,9 +45,9 @@ const Hero = ({ className }: HeroProps) => {
 			<div className={heroStyles.divider} />
 
 			<div className={heroStyles.right}>
-				<GlassmorphismCard className={twMerge("w-full p-6 rounded-2xl")}>
+				<GlassmorphismCard className={heroStyles.rightContainer}>
 					<h1 className={heroStyles.heading}>Leaderboard</h1>
-					<Marquee direction="up" className={heroStyles.marquee}>
+					<Marquee>
 						{TOP_10_RANKINGS?.map?.(({ avatarId, userName }, index) => (
 							<LeaderboardCard
 								key={`${index} ${userName}`}
