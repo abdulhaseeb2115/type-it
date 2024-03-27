@@ -2,50 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
-
 /* -- Marquee -- */
 .slide-up {
   --from: translateY(100%);
   --to: translateY(-100%);
-  animation: slideAnimation 10s linear infinite;
-}
-
-.slide-down {
-  --from: translateY(-100%);
-  --to: translateY(100%);
-  animation: slideAnimation 10s linear infinite;
-}
-
-.slide-right {
-  --from: translateX(100%);
-  --to: translateX(-100%);
-  animation: slideAnimation 10s linear infinite;
+  animation: slideAnimation 15s linear infinite;
 }
 
 .slide-left {
-  --from: translateX(-100%);
-  --to: translateX(100%);
-  animation: slideAnimation 10s linear infinite;
+  --from: translateX(100vw);
+  --to: translateX(-100%);
+  animation: slideAnimation 25s linear infinite;
 }
 
 @keyframes slideAnimation {
