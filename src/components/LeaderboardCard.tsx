@@ -20,7 +20,7 @@ type Props = {
 };
 
 const cardStyles = {
-	container: "flex items-center gap-3 mb-2",
+	container: "min-w-fit flex items-center gap-3",
 };
 
 //----------------------------------------------
