@@ -16,8 +16,6 @@ export type RankColorCollection = {
 	[key: number]: string;
 };
 
-export type MarqueeDirections = "up" | "right" | "left" | "down";
-
 //----------------------------------------------
 
 export enum ModalState {

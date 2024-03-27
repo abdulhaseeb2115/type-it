@@ -1,12 +1,9 @@
 "use client";
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
-// types
-import { MarqueeDirections } from "@/types";
 //----------------------------------------------
 
 interface MarqueeProps {
-	direction?: MarqueeDirections;
 	className?: string;
 	children: ReactNode;
 	pause?: boolean;
@@ -14,21 +11,31 @@ interface MarqueeProps {
 
 //----------------------------------------------
 const Marquee: React.FC<MarqueeProps> = ({
-	direction = "right",
 	pause = false,
 	className,
 	children,
 }) => {
-	const animationDirectionClass = {
-		up: "slide-up",
-		down: "slide-down",
-		right: "slide-right",
-		left: "slide-left",
-	};
-
 	return (
-		<div className={twMerge("relative overflow-hidden", className)}>
-			<div className={twMerge(!pause && animationDirectionClass[direction])}>
+		<div
+			className={twMerge(
+				"overflow-hidden max-xl:w-full xl:max-h-[490px] 3xl:max-h-[700px]",
+				className
+			)}
+		>
+			<div
+				className={twMerge(
+					"max-xl:hidden flex flex-col gap-3",
+					!pause && "slide-up"
+				)}
+			>
+				{children}
+			</div>
+			<div
+				className={twMerge(
+					"xl:hidden min-w-full w-fit flex gap-10 pr-28",
+					!pause && "slide-left"
+				)}
+			>
 				{children}
 			</div>
 		</div>
