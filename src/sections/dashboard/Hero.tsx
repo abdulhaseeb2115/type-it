@@ -40,7 +40,11 @@ const heroStyles = {
 const Hero = ({ className }: HeroProps) => {
 	return (
 		<Section className={twMerge(heroStyles.section, className)}>
-			<div className={heroStyles.left}></div>
+			<div className={heroStyles.left}>
+				<GlassmorphismCard className={heroStyles.rightContainer}>
+					<></>
+				</GlassmorphismCard>
+			</div>
 
 			<div className={heroStyles.divider} />
 
